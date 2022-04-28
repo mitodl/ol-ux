@@ -1,0 +1,13 @@
+{
+  "name": "ol-ux",
+  "repository": "git@github.com:mitodl/ol-ux.git",
+  "license": "Modified BSD-3",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "version": "0.0.0"
+}
