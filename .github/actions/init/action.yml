@@ -1,0 +1,16 @@
+name: 'Init'
+description: 'Initialize with the source code'
+runs:
+  using: "composite"
+  steps:
+      # Workaround to avoid "Post Run actions/setup-node" failures.
+      # See: https://github.com/actions/setup-node/issues/317
+      - run: mkdir -p .yarn/cache
+        shell: bash
+        continue-on-error: true
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'

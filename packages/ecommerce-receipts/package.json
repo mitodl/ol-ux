@@ -1,10 +1,22 @@
 {
-  "name": "@mitodl/receipts",
+  "name": "@mitodl/ecommerce-receipts",
   "packageManager": "yarn@3.2.0",
+  "main": "dist/index",
+  "types": "dist/index",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "fmt": "yarn global:fmt",
+    "build": "yarn global:build",
+    "clean": "yarn global:clean",
+    "compile": "yarn global:compile",
+    "coverage": "yarn global:coverage",
     "fmt-check": "yarn global:fmt-check",
-    "lint": "yarn global:lint",
+    "fmt-fix": "yarn global:fmt-fix",
+    "lint-check": "yarn global:lint-check",
+    "lint-fix": "yarn global:lint-fix",
+    "prepare": "yarn global:prepare",
     "test": "yarn global:test"
-  }
+  },
+  "version": "0.0.0"
 }

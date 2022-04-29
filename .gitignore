@@ -1,5 +1,6 @@
 *.log
 *.gz
+*.tgz
 
 # Dependency directory
 node_modules
@@ -8,6 +9,8 @@ node_modules
 !src/lib
 .tsbuildinfo
 .jest-cache/
+dist/
+coverage/
 
 .pnp.*
 .yarn/*
