@@ -7,7 +7,27 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "jest"
+    "global:fmt": "cd $INIT_CWD && prettier",
+    "global:fmt-check": "cd $INIT_CWD && prettier --check",
+    "global:lint": "cd $INIT_CWD && eslint",
+    "global:test": "cd $INIT_CWD && jest",
+    "fmt": "yarn workspaces foreach run fmt",
+    "fmt-check": "yarn workspaces foreach run fmt-check",
+    "lint": "yarn workspaces foreach run lint",
+    "test": "yarn workspaces foreach run test"
   },
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "packageManager": "yarn@3.2.0",
+  "dependencies": {
+    "eslint": "^8.14.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-prettier-config": "^1.0.1",
+    "jest": "^28.0.3",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8",
+    "@types/prettier": "^2"
+  }
 }

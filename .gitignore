@@ -1,0 +1,35 @@
+*.log
+*.gz
+
+# Dependency directory
+node_modules
+
+# JS directories
+!src/lib
+.tsbuildinfo
+.jest-cache/
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Editor stuff
+*.swp
+*.orig
+
+/nbproject
+.idea/
+.redcar/
+codekit-config.json
+.pycharm_helpers/
+
+.project
+.pydevproject
+
+*.DS_Store
+
+.vscode/

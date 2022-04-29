@@ -1,0 +1,10 @@
+{
+  "name": "@mitodl/receipts",
+  "packageManager": "yarn@3.2.0",
+  "scripts": {
+    "fmt": "yarn global:fmt",
+    "fmt-check": "yarn global:fmt-check",
+    "lint": "yarn global:lint",
+    "test": "yarn global:test"
+  }
+}
