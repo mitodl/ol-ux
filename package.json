@@ -6,28 +6,63 @@
   "workspaces": [
     "packages/*"
   ],
+  "files": [],
   "scripts": {
-    "global:fmt": "cd $INIT_CWD && prettier",
-    "global:fmt-check": "cd $INIT_CWD && prettier --check",
-    "global:lint": "cd $INIT_CWD && eslint",
+    "global:build": "cd $INIT_CWD && yarn clean && yarn compile",
+    "global:clean": "cd $INIT_CWD && rimraf -rf dist/",
+    "global:compile": "cd $INIT_CWD && tsc -p tsconfig.build.json",
+    "global:coverage": "cd $INIT_CWD && yarn test --coverage",
+    "global:fmt-check": "cd $INIT_CWD && prettier -w src/ test/",
+    "global:fmt-fix": "cd $INIT_CWD && prettier --check src/ test/",
+    "global:lint-check": "cd $INIT_CWD && eslint src/** test/**",
+    "global:lint-fix": "cd $INIT_CWD && eslint --fix src/** test/**",
+    "global:prepare": "cd $INIT_CWD && yarn build",
     "global:test": "cd $INIT_CWD && jest",
+    "build": "yarn workspaces foreach run build",
+    "clean": "yarn workspaces foreach run clean",
+    "compile": "yarn workspaces foreach run compile",
+    "coverage": "yarn workspaces foreach run coverage",
     "fmt": "yarn workspaces foreach run fmt",
     "fmt-check": "yarn workspaces foreach run fmt-check",
     "lint": "yarn workspaces foreach run lint",
+    "prepare": "yarn workspaces foreach run prepare",
     "test": "yarn workspaces foreach run test"
   },
   "version": "0.0.0",
   "packageManager": "yarn@3.2.0",
-  "dependencies": {
+  "devDependencies": {
+    "@changesets/cli": "^2.22.0",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/react-12": "npm:@testing-library/react@^12",
+    "@types/eslint": "8.4.1",
+    "@types/jest": "^27.4.1",
+    "@types/prettier": "2.6.0",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/rimraf": "^3",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
     "eslint": "^8.14.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-prettier-config": "^1.0.1",
     "jest": "^28.0.3",
     "prettier": "^2.6.2",
+    "react": "^18",
+    "react-16": "npm:react@^16.8",
+    "react-17": "npm:react@^17",
+    "react-18": "npm:react@^18.1",
+    "react-dom": "^18",
+    "react-dom-16": "npm:react-dom@^16.8",
+    "react-dom-17": "npm:react-dom@^17",
+    "react-dom-18": "npm:react-dom@^18.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "28.0.0-next.3",
+    "ts-node": "^10.7.0",
     "typescript": "^4.6.4"
   },
-  "devDependencies": {
-    "@types/eslint": "8.4.1",
-    "@types/prettier": "2.6.0"
+  "peerDependencies": {
+    "react": "^16.8 || ^17 || ^18.1",
+    "react-dom": "^16.8 || ^17 || ^18.1",
+    "react-query": "^3.38.0"
   }
 }

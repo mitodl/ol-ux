@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig.json to read more about this file */
+    "incremental": true,
+    "composite": true,
+    "target": "es5",
+    "module": "commonjs",
+    "baseUrl": "./",
+    "paths": {
+      "@mitodl/*": [
+        "packages/*/src"
+      ]
+    },
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": false
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

@@ -1,0 +1,35 @@
+on: [push]
+
+jobs:
+  tests:
+    name: tests (react@^${{ matrix.react_version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        react_version: ["0.16", "0.17", "0.18"]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/init
+
+      - name: Set React version
+        run: echo "REACT_VERSION=${{ matrix.react_version }}" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Lints
+        run: yarn workspaces foreach run lint-check
+
+      - name: Code formatting
+        run: yarn workspaces foreach run fmt-check
+
+      - name: Tests
+        run: yarn workspaces foreach run test
+
+      - name: Build
+        run: yarn workspaces foreach run build
+
+      - name: Upload test coverage to CodeCov
+        uses: codecov/codecov-action@v1
+        with:
+          file: coverage/lcov.info
