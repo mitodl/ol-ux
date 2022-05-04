@@ -8,7 +8,7 @@ jobs:
       matrix:
         react_version: ["0.16", "0.17", "0.18"]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/init
 
       - name: Set React version
