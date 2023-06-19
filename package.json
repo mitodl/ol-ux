@@ -56,7 +56,7 @@
     "react-dom-17": "npm:react-dom@^17",
     "react-dom-18": "npm:react-dom@^18.1",
     "rimraf": "^3.0.2",
-    "ts-jest": "28.0.0-next.3",
+    "ts-jest": "28.0.8",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.4"
   },
