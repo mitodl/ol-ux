@@ -11,6 +11,6 @@ jobs:
     name: Auto-update
     runs-on: ubuntu-latest
     steps:
-      - uses: tibdex/auto-update@6923e6a446fd857f944076793d8a82d53bc1bd89
+      - uses: tibdex/auto-update@8f752aecd7f9eba12eca879e232fdb5e7c9043de
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
